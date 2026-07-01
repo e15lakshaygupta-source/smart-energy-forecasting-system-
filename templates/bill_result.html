@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Electricity Bill</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚡ Electricity Bill</h1>
+
+<hr>
+
+<p><b>Bill Number:</b> {{ bill_no }}</p>
+
+<p><b>Bill Date:</b> {{ bill_date }}</p>
+
+<hr>
+
+<h2>{{ customer }}</h2>
+
+<hr>
+
+<p>
+<b>Previous Reading:</b>
+{{ previous }}
+</p>
+
+<p>
+<b>Current Reading:</b>
+{{ current }}
+</p>
+
+<p>
+<b>Units Consumed:</b>
+{{ units }}
+</p>
+
+<p>
+<b>Rate Per Unit:</b>
+₹{{ rate }}
+</p>
+
+<p>
+<b>Energy Charge:</b>
+₹{{ energy_charge }}
+</p>
+
+<p>
+<b>Fixed Charge:</b>
+₹{{ fixed_charge }}
+</p>
+
+<p>
+<b>Electricity Duty (5%):</b>
+₹{{ duty }}
+</p>
+
+<hr>
+
+<h2>
+Total Bill Amount:
+₹{{ total_bill }}
+</h2>
+
+<br>
+
+<a href="/bill">
+Generate Another Bill
+</a>
+
+<br><br>
+
+<a href="/download_bill">
+📄 Download PDF Bill
+</a> 
+
+<br><br>
+
+<button onclick="window.print()" class="print-btn">
+
+    🖨️ Print Bill
+
+</button> 
+
+<br><br>
+
+<a href="/">
+
+    🏠 Back to Home
+
+</a> 
+
+</div>
+
+</body>
+</html>   

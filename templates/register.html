@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Register - Energy Forecasting System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="login-page">
+
+<div class="login-container">
+
+    <div class="login-card">
+
+        <h1>📝</h1>
+
+        <h2>Create New Account</h2>
+
+        <p>
+            Join the Energy Forecasting & Optimization System
+        </p>
+
+        <form action="/register" method="POST">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Choose a Username"
+                required
+            >
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Create a Password"
+                required
+            >
+
+            <button type="submit">
+
+                ✅ Register
+
+            </button>
+
+        </form>
+
+        {% if error %}
+
+        <div class="error-box">
+
+            {{ error }}
+
+        </div>
+
+        {% endif %}
+
+        <br>
+
+        <a href="/login" class="register-link">
+
+            🔐 Already have an account? Login
+
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html> 

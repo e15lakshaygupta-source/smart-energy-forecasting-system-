@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Energy Dashboard</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>📊 Energy Dashboard</h1>
+
+        <p>
+            Welcome, {{ username }}
+        </p>
+
+    </div>
+
+    <!-- Dashboard Cards -->
+
+    <div class="dashboard-grid">
+
+        <!-- Total Predictions -->
+
+        <div class="card">
+
+            <h2>📈</h2>
+
+            <h3>Total Predictions</h3>
+
+            <p>{{ total_predictions }}</p>
+
+        </div>
+
+        <!-- Average Consumption -->
+
+        <div class="card">
+
+            <h2>⚡</h2>
+
+            <h3>Average Consumption</h3>
+
+            <p>{{ avg_consumption }} kWh</p>
+
+        </div>
+
+        <!-- Highest Consumption -->
+
+        <div class="card">
+
+            <h2>🔥</h2>
+
+            <h3>Highest Consumption</h3>
+
+            <p>{{ highest_consumption }} kWh</p>
+
+        </div>
+
+        <!-- Total Cost -->
+
+        <div class="card">
+
+            <h2>💰</h2>
+
+            <h3>Total Estimated Cost</h3>
+
+            <p>₹{{ total_cost }}</p>
+
+        </div>
+
+    </div>
+
+    <br>
+
+    <a href="/" class="menu-btn">
+        🏠 Back to Home
+    </a>
+
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Electricity Bill Calculator</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>⚡ Electricity Bill Calculator</h1>
+
+<form action="/generate_bill" method="POST">
+
+<label><b>Customer Name</b></label>
+
+<br><br>
+
+<input
+type="text"
+name="customer"
+required
+>
+
+<br><br>
+
+<label><b>Previous Meter Reading</b></label>
+
+<br><br>
+
+<input
+type="number"
+name="previous"
+required
+>
+
+<br><br>
+
+<label><b>Current Meter Reading</b></label>
+
+<br><br>
+
+<input
+type="number"
+name="current"
+required
+>
+
+<br><br>
+
+<label><b>Rate Per Unit (₹)</b></label>
+
+<br><br>
+
+<input
+type="number"
+step="0.01"
+name="rate"
+required
+>
+
+<br><br>
+
+<button type="submit">
+Generate Bill
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

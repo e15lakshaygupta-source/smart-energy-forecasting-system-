@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Prediction History</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>📜 Prediction History</h1>
+
+        <p>
+            View all previous energy predictions
+        </p>
+
+    </div>
+
+    <!-- Table -->
+
+    <table class="history-table">
+
+        <tr>
+
+            <th>User</th>
+
+            <th>Hour</th>
+
+            <th>Consumption</th>
+
+            <th>Cost</th>
+
+            <th>Status</th>
+
+            <th>Date & Time</th>
+
+        </tr>
+
+        {% for item in history %}
+
+        <tr>
+
+            <td>{{ item[0] }}</td>
+
+            <td>{{ item[1] }}</td>
+
+            <td>{{ item[2] }} kWh</td>
+
+            <td>₹{{ item[3] }}</td>
+
+            <td>{{ item[4] }}</td>
+
+            <td>{{ item[5] }}</td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+    <br><br>
+
+    <a href="/" class="menu-btn">
+        🏠 Home
+    </a>
+
+    <br><br>
+
+    <a href="/export_csv" class="menu-btn">
+        📥 Export CSV
+    </a>
+
+</div>
+
+</body>
+
+</html> 

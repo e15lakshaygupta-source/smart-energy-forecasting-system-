@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <h1>⚡ Energy Analysis Dashboard</h1>
+
+    <div class="card">
+        <h2>📊 Predicted Consumption</h2>
+        <h3>{{ consumption }} kWh</h3>
+    </div>
+
+    <div class="card">
+        <h2>💰 Estimated Cost</h2>
+        <h3>₹{{ cost }}</h3>
+    </div>
+    
+    <div class="card">
+        <h2>📅 Monthly Bill Estimate</h2>
+        <h3>₹{{ monthly_bill }}</h3>
+    </div>
+
+    <canvas id="energyChart" width="400" height="200"></canvas>
+
+    <br><br>
+
+    <a href="/">🔄 Predict Again</a>
+
+    <br><br>
+    
+    <a href="/logout">🚪 Logout</a>
+
+</div>
+
+<script>
+const consumptionValue = Number("{{ consumption }}");
+
+const ctx = document.getElementById('energyChart');
+
+new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Energy Consumption'],
+        datasets: [{
+            label: 'kWh',
+            data: [consumptionValue]
+        }]
+    },
+    options: {
+        responsive: true
+    }
+});
+</script>
+
+</body>
+</html>
