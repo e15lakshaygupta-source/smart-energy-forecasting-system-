@@ -730,6 +730,27 @@ def admin():
     cursor.execute("SELECT username FROM users")
     users = cursor.fetchall() 
 
+    # Fetch All Predictions
+
+    cursor.execute("""
+
+SELECT username,
+       hour,
+       consumption,
+       cost,
+       status,
+       prediction_date
+
+FROM predictions
+
+ORDER BY prediction_date DESC
+
+""")
+
+    predictions = cursor.fetchall()
+
+
+    
     # Total Predictions
     cursor.execute("SELECT COUNT(*) FROM predictions")
     total_predictions = cursor.fetchone()[0]
@@ -750,7 +771,8 @@ def admin():
     total_users=total_users,
     total_predictions=total_predictions,
     total_revenue=total_revenue,
-    users=users
+    users=users,
+    predictions=predictions
 ) 
 
 

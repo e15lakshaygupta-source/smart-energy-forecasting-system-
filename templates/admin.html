@@ -88,9 +88,49 @@
 
 </table>
 
-<br><br> 
+<br><br>
+
+<hr>
+
+<h2>⚡ All Prediction Records</h2>
+
+<table class="history-table">
+
+```
+<tr>
+    <th>User</th>
+    <th>Hour</th>
+    <th>Consumption</th>
+    <th>Cost</th>
+    <th>Status</th>
+    <th>Date & Time</th>
+</tr>
+
+{% for item in predictions %}
+
+<tr>
+
+    <td>{{ item[0] }}</td>
+
+    <td>{{ item[1] }}</td>
+
+    <td>{{ item[2] }} kWh</td>
+
+    <td>₹{{ item[3] }}</td>
+
+    <td>{{ item[4] }}</td>
+
+    <td>{{ item[5] }}</td>
+
+</tr>
+
+{% endfor %}
+```
+
+</table>
 
 <br><br>
+
 
 <a href="/" class="menu-btn">
     🏠 Home
